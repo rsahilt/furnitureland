@@ -2,6 +2,8 @@ header{
     width: 100%;
     height: 100px;
     display: flex;
+    /* background: linear-gradient(to bottom, #b7bcc1, #edeeef); */
+    background-color: #fff;
 }
 
 .logo{
@@ -30,6 +32,7 @@ header{
     display: flex;
     justify-content: right;
     font-weight: 500;
+    padding-right: 20px;
 }
 
 .menubar{
@@ -54,8 +57,4 @@ header{
 .btn-outline-success:hover{
     background-color: transparent;
     color: black;
-}
-
-.text-shadow{
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }

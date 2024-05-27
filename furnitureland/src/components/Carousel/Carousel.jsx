@@ -4,7 +4,6 @@ import living from '../../assets/living.jpeg'
 import bedroom from '../../assets/bedroom.jpeg'
 import Carousel from 'react-bootstrap/Carousel';
 
-
 const Content = () => {
   return (  
     <Carousel>

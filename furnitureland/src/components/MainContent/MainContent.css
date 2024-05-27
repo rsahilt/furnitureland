@@ -1,0 +1,57 @@
+section{
+    width: 100%;
+    padding-top: 100px;
+    height: auto;
+    display: flex;
+    flex-direction: column; 
+    background-color: #fff;
+}
+
+.heading-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sectionh1{
+    font-family: "Radio Canada Big", sans-serif;
+    font-size: 2.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.heading-desc{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 20px;
+    color: #6f7a84;
+}
+
+.prod-container{
+    margin: 0 auto;
+    width: 90%;
+    margin-bottom: 40px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prod-title{
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #478e92;
+}
+
+.prod-price{
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #0f4447;
+}
+
