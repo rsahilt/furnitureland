@@ -1,0 +1,57 @@
+header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    background-color: orange;
+}
+
+.logo{
+    width: 120px;
+    height: 120px;
+}
+
+.image-logo{
+    width: 120px;
+    height: 120px;
+    background-color: rgb(129, 33, 33);
+}
+
+.nav{
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.utility-bar{
+    height: 30px;
+    width: 100%;
+    font-size: 0.8em;
+    align-items: center;
+    display: flex;
+    justify-content: right;
+    font-weight: 500;
+}
+
+.menubar{
+    height: 70px;
+    width: 100%;
+}
+
+.nav-item{
+    text-transform: uppercase;
+    font-size: 0.88em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0 9px;
+}
+
+.btn-outline-success{
+    border: none;
+    padding-left: 2px;
+    color: black;
+}
+
+.btn-outline-success:hover{
+    background-color: transparent;
+    color: black;
+}
