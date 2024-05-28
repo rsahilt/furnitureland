@@ -55,3 +55,63 @@ section{
     color: #0f4447;
 }
 
+.banner{
+    width: 100%;
+    height: 500px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    background-color:#f8cdb4;
+}
+
+.banner-image{
+    width: 50%;
+    height: 100%;
+}
+
+.image-banner{
+    width: 100%;
+    height: 100%;
+}
+
+.banner-text{
+    width: 50%;
+    height: 100%;
+}
+
+.bannertexth1{
+    font-family: "Radio Canada Big", sans-serif;
+    font-weight: 700;
+    padding: 80px 20px 0 50px;
+    width: 80%;
+}
+
+.bannertextp{
+    padding: 30px 20px 0 50px;
+}
+
+.bannertextp:nth-child(3){
+    padding: 0px 20px 0 50px;
+}
+
+.button-discover{
+    background-color: #cc5c5c;
+    border: 1px solid black;
+    border-radius: 0;
+    padding: 10px 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+    transition: all 0.3s ease-in-out;
+}
+
+.button-discover:hover{
+    background-color:#b25050;
+    border-color: black;
+}
+
+
+
+
+

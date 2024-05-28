@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import prod1 from '../../assets/prod1.png';
 import prod2 from '../../assets/prod2.png';
 import prod3 from '../../assets/prod3.png';
+import bannerimage from '../../assets/banner.jpeg'
 
 const MainContent = () => {
   return (
@@ -40,7 +41,27 @@ const MainContent = () => {
             </Card>
         </div>
 
-        <div className="banner"></div>
+        <div className="banner">
+            <div className="banner-image">
+                <img src={bannerimage} alt="Banner Image" className='image-banner'/>
+            </div>
+            
+            <div className="banner-text">
+                <h1 className="bannertexth1">MOST TRUSTED INTERNATIONAL BRANDS</h1>
+                <p className='bannertextp'>
+                    Indulge in the elegance of international brands' furniture and elevate your living space to new heights of sophistication.
+                </p>
+
+                <p className='bannertextp'>
+                    Transform your home into a sanctuary of style with exquisite furniture from renowned international brands.
+                </p>
+
+                <p className='bannertextp'>
+                    <Button className="button-discover" variant="primary">Discover</Button>
+                </p>
+
+            </div>
+        </div>
     </section>
   )
 }
