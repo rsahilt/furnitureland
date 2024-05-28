@@ -136,9 +136,39 @@ section{
 
 .message{
     width: 100%;
-    background-color: red;
-    height: 200px;
-    margin-top: 60px
+    height: 300px;
+    margin-top: 160px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-director{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+.msg-director{
+    height: 150px;
+    width: 70%;
+    text-align: center;
+    font-size: 1.2em;
+    padding-top: 10px;
+}
+
+.directorh5{
+    font-weight: 600;
+    font-size: 1.3em;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.directorh6{
+    font-weight: 400;
+    font-size: 0.8em;
+    
 }
 
 .summary{

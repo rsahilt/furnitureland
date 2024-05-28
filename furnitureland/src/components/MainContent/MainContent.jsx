@@ -8,12 +8,14 @@ import bannerimage from '../../assets/banner.jpeg'
 import instabanner from '../../assets/instabanner.png'
 import insta1 from '../../assets/insta1.png'
 import insta2 from '../../assets/insta2.png'
+import dirimage from '../../assets/dirimage.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faTruck } from '@fortawesome/free-solid-svg-icons'
 import { faCreditCard } from '@fortawesome/free-solid-svg-icons'
 import { faBuilding } from '@fortawesome/free-solid-svg-icons'
 import { faHammer } from '@fortawesome/free-solid-svg-icons'
+
 
 
 
@@ -89,7 +91,18 @@ const MainContent = () => {
             </div>
         </div>
 
-        <div className="message">MESSAGE FROM THE DIRECTOR</div>
+        <div className="message">
+            <div className="image-director">
+                <img src={dirimage} alt="Image of director" style={{width:'100%', height:'100%', borderRadius:'50%'}}/  >
+            </div>
+            <div className="msg-director">
+                <h5 className='directorh5'>Saurav Joshi</h5>
+                <h6 className='directorh6'>Managing Director</h6>
+                <p>
+                    "We strive to provide our customers with wide selection of furniture and household decorative items that are well designed, functional, practical, comfortable and have best value for money."
+                </p>
+            </div>
+        </div>
 
         <div className="summary">
             <div className="summaryitem">
