@@ -1,0 +1,42 @@
+.section-showroom{
+    width: 80%;
+    margin: 0 auto;
+    font-family: "Radio Canada Big", sans-serif;
+    padding: 100px 0;
+}
+
+
+.showroom-address{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 400px;
+}
+
+.add-showroompage{
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.location{
+    margin-top:20px;
+    width: 30%;
+    cursor: pointer;
+}
+
+.maps-store{
+    margin-top:20px;
+    width: 65%;
+    margin-left: 5%;
+}
+
+
+.location-box{
+    margin-bottom: 10px;
+    background-color: rgb(129, 33, 33);
+    color: white;
+    padding: 9px;
+}

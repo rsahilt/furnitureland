@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import About from './pages/AboutPage.jsx'
+import Showroom from './pages/Showroom.jsx'
 
 import {
   createBrowserRouter,
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/about-us",
     element: <About />,
+  },
+  {
+    path: "/showroom",
+    element: <Showroom />,
   },
 ]);
 
