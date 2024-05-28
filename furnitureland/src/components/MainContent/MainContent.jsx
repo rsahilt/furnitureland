@@ -89,6 +89,8 @@ const MainContent = () => {
             </div>
         </div>
 
+        <div className="message">MESSAGE FROM THE DIRECTOR</div>
+
         <div className="summary">
             <div className="summaryitem">
                 <FontAwesomeIcon icon={faTruck} className='summary-icon'/>  
