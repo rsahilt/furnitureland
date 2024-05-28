@@ -3,6 +3,15 @@ import logo from '../../assets/furniturelandlogo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
 import {faCartShopping} from '@fortawesome/free-solid-svg-icons'
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import InputGroup from 'react-bootstrap/InputGroup';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 const Header = () => {
@@ -24,54 +33,39 @@ const Header = () => {
             </div>
 
             <div className="menubar">
+                <Navbar expand="lg" className="bg-body-tertiary">
+                    <Container>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav">
+                            <Nav className="me-auto">
+                                <Nav.Link className='nav-item' href="#">Home</Nav.Link>
+                                <Nav.Link className='nav-item' href="#">Showroom</Nav.Link>
+                                <Nav.Link className='nav-item' href="#">Products</Nav.Link>
+                                <Nav.Link className='nav-item' href="#">About Us</Nav.Link>
+                                <Nav.Link className='nav-item' href="#">Contact Us</Nav.Link>
+                                <Nav.Link className='nav-item' href="#">Brand</Nav.Link>
+                            </Nav>
 
-                <nav class="navbar navbar-expand-lg ms-5 ps-5">
-                    <div class="container-fluid">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Home</a>
-                            </li>
+                            <Form inline>
+                                <Row>
+                                    <Col xs="auto">
+                                        <Form.Control
+                                        type="text"
+                                        placeholder="Search"
+                                        className=" mr-sm-2 searchbox"
+                                        />
+                                    </Col>
+                                    <Col xs="auto">
+                                        <Button className='btn-outline-success' type="submit">
+                                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                                        </Button>
+                                    </Col>
+                                </Row>
+                        </Form>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Showroom</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Products</a>
-                            </li>
-
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">About Us</a>
-                            </li>
-
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact Us</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Brands</a>
-                            </li>
-                            
-                            
-                        </ul>
-                        
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2 searchbox" type="search" placeholder="Search Products" aria-label="Search" />
-                            <button class="btn btn-outline-success" type="submit">
-                                <FontAwesomeIcon icon={faMagnifyingGlass}/>
-                            </button>
-                        </form>
-
-                        </div>
-                    </div>
-                </nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
             </div>
         </div>
     </header>

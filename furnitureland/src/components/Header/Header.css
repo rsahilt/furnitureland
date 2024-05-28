@@ -48,15 +48,17 @@ header{
 .nav-item{
     text-transform: uppercase;
     font-size: 0.88em;
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: 1px;
-    padding: 0 9px;
+    margin: 0 10px;
 }
+
 
 .btn-outline-success{
     border: none;
     padding-left: 2px;
     color: black;
+    background-color: transparent;
 }
 
 .btn-outline-success:hover{
