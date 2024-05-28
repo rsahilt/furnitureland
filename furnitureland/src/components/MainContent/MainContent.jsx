@@ -23,7 +23,7 @@ import 'aos/dist/aos.css'
 const MainContent = () => {
 
     useEffect(()=>{
-        AOS.init({duration:2000});
+        AOS.init({duration:1000});
     },[])
 
   return (

@@ -12,6 +12,7 @@ import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Link } from 'react-router-dom'
 
 
 const Header = () => {
@@ -33,17 +34,17 @@ const Header = () => {
             </div>
 
             <div className="menubar">
-                <Navbar expand="lg" className="bg-body-tertiary">
+                <Navbar expand="lg" style={{paddingLeft:'50px'}}>
                     <Container>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
-                                <Nav.Link className='nav-item' href="#">Home</Nav.Link>
-                                <Nav.Link className='nav-item' href="#">Showroom</Nav.Link>
-                                <Nav.Link className='nav-item' href="#">Products</Nav.Link>
-                                <Nav.Link className='nav-item' href="#">About Us</Nav.Link>
-                                <Nav.Link className='nav-item' href="#">Contact Us</Nav.Link>
-                                <Nav.Link className='nav-item' href="#">Brand</Nav.Link>
+                                <Nav.Link as={Link} to="/" className="nav-item">Home</Nav.Link>
+                                <Nav.Link as={Link} to="/showroom" className="nav-item">Showroom</Nav.Link>
+                                <Nav.Link as={Link} to="/products" className="nav-item">Products</Nav.Link>
+                                <Nav.Link as={Link} to="/about-us" className="nav-item">About Us</Nav.Link>
+                                <Nav.Link as={Link} to="/contact-us" className="nav-item">Contact Us</Nav.Link>
+                                <Nav.Link as={Link} to="/brand" className="nav-item">Brand</Nav.Link>
                             </Nav>
 
                             <Form inline>
@@ -56,7 +57,7 @@ const Header = () => {
                                         />
                                     </Col>
                                     <Col xs="auto">
-                                        <Button className='btn-outline-success' type="submit">
+                                        <Button className='searchbuttonhome' type="submit">
                                             <FontAwesomeIcon icon={faMagnifyingGlass} />
                                         </Button>
                                     </Col>

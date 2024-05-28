@@ -1,0 +1,39 @@
+.about-section{
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.board{
+    margin: 20px auto;
+    width: 70%;
+    height: 180px;
+    display: flex;
+    flex-direction: row;
+}
+
+.image-member{
+    min-width: 20%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.text-member{
+    width: 80%;
+    height: 100%;
+}
+
+.aboutheading{
+    margin: 0 auto;
+    width: 70%;
+    font-family: "Radio Canada Big", sans-serif;
+}
+
+.member-name{
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.member-title{
+    font-size: 0.9em;
+    color:#9d92aa;
+}
