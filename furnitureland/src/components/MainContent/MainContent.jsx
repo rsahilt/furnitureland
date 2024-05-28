@@ -55,7 +55,13 @@ const MainContent = () => {
             </Card>
         </div>
 
-        <div className="banner banner-bg">
+        <p style={{display:'flex', justifyContent:'center', alignItems:'center'}}className='bannertextp'>
+            <Button className="button-discover" variant="primary">VIEW ALL PRODUCTS</Button>
+        </p>
+  
+        
+
+        <div className="banner banner-bg" style={{marginTop:'100px'}}>
             <div className="banner-image">
                 <img src={bannerimage} alt="Banner Image" className='image-banner'/>
             </div>

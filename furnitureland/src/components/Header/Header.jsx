@@ -1,8 +1,6 @@
 import './Header.css'
 import logo from '../../assets/furniturelandlogo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faPhone} from '@fortawesome/free-solid-svg-icons'
-import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
 
 
@@ -15,8 +13,7 @@ const Header = () => {
 
         <div className="nav">
             <div className="utility-bar">
-                <FontAwesomeIcon icon={faPhone} />&nbsp;01-5324797 &nbsp; &nbsp; &nbsp;
-                <FontAwesomeIcon icon={faEnvelope} />&nbsp; 01-5324797 &nbsp;
+                Login | Register
             </div>
 
             <div className="menubar">
@@ -59,7 +56,7 @@ const Header = () => {
                         </ul>
                         
                         <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search Products" aria-label="Search" />
+                            <input class="form-control me-2 searchbox" type="search" placeholder="Search Products" aria-label="Search" />
                             <button class="btn btn-outline-success" type="submit">
                                 <FontAwesomeIcon icon={faMagnifyingGlass}/>
                             </button>
