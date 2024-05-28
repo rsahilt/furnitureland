@@ -27,12 +27,12 @@ header{
 .utility-bar{
     height: 30px;
     width: 100%;
-    font-size: 0.8em;
+    font-size: 1em;
     align-items: center;
     display: flex;
     justify-content: right;
     font-weight: 500;
-    padding-right: 20px;
+    padding-right: 22px;
 }
 
 .signinstatus{
@@ -69,6 +69,7 @@ header{
     border-bottom: 1px solid #7f7f7f;
     border-radius: 0;
     outline: none;
+    background-color: transparent;
 }
 
 .searchbox:focus {

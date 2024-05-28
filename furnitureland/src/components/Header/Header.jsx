@@ -2,6 +2,7 @@ import './Header.css'
 import logo from '../../assets/furniturelandlogo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
+import {faCartShopping} from '@fortawesome/free-solid-svg-icons'
 
 
 const Header = () => {
@@ -13,9 +14,13 @@ const Header = () => {
 
         <div className="nav">
             <div className="utility-bar">
-               <a href="#" className='signinstatus'>Login</a>
-               &nbsp;|&nbsp;
-               <a href="#" className='signinstatus'>Register</a>
+                <a href="#" className='signinstatus'>Login</a>
+                &nbsp;|&nbsp;
+                <a href="#" className='signinstatus'>Register</a>
+                &nbsp;&nbsp;
+                <a href="#" className='signinstatus'>
+                    <FontAwesomeIcon icon={faCartShopping} />
+                </a>
             </div>
 
             <div className="menubar">

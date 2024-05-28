@@ -4,6 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import {faPhone} from '@fortawesome/free-solid-svg-icons'
 import {faLocationDot} from '@fortawesome/free-solid-svg-icons'
+import { faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { faFacebook } from '@fortawesome/free-brands-svg-icons'
+import { faViber } from '@fortawesome/free-brands-svg-icons'
 
 
 const Footer = () => {
@@ -19,7 +22,15 @@ const Footer = () => {
                 <p className='footer-company-links'>
                     <FontAwesomeIcon icon={faPhone}/>&nbsp; &nbsp;01-4224797</p>
                 <p className='footer-company-links'>
-                    <FontAwesomeIcon icon={faLocationDot}/>&nbsp; &nbsp;Bluestar Complex, Tripureshwor, Kathmandu 44600, Nepal</p>
+                    <FontAwesomeIcon icon={faLocationDot}/>&nbsp; &nbsp;Bluestar Complex, Tripureshwor, Kathmandu 44600, Nepal
+                </p>
+
+                <p className='footer-company-links social-media-icons'>
+                    <FontAwesomeIcon icon={faFacebook}/>&nbsp; &nbsp;
+                    <FontAwesomeIcon icon={faInstagram}/>&nbsp; &nbsp;
+                    <FontAwesomeIcon icon={faViber}/>&nbsp; &nbsp;
+                </p>
+               
             </div>
             <div className="quicklinks">
                 <h5>CONTACT</h5>

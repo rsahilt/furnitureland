@@ -15,21 +15,25 @@ import { faTruck } from '@fortawesome/free-solid-svg-icons'
 import { faCreditCard } from '@fortawesome/free-solid-svg-icons'
 import { faBuilding } from '@fortawesome/free-solid-svg-icons'
 import { faHammer } from '@fortawesome/free-solid-svg-icons'
-
-
-
+import { useEffect } from 'react';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 
 const MainContent = () => {
 
+    useEffect(()=>{
+        AOS.init({duration:2000});
+    },[])
+
   return (
     <section>
-        <div className='heading-container'>
+        <div className='heading-container' data-aos="slide-up">
             <h1 className='sectionh1'>Best Seller</h1>
             <p className='heading-desc'>Uncover the undeniable allure of our top-selling furniture pieces, where timeless craftsmanship meets unparalleled comfort, creating an enduring appeal.</p>
         </div>
 
-        <div className="prod-container">    
+        <div className="prod-container" data-aos="slide-up">    
             <Card style={{width: '30%', borderRadius: '0px' , border:'1px solid #d1e2e3'}}>
                 <Card.Img style={{borderRadius: '0px', height:'280px'}} variant="top" src={prod1} />
                 <Card.Body>
@@ -61,7 +65,7 @@ const MainContent = () => {
   
         
 
-        <div className="banner banner-bg" style={{marginTop:'100px'}}>
+        <div className="banner banner-bg" style={{marginTop:'100px'}} data-aos="slide-up">
             <div className="banner-image">
                 <img src={bannerimage} alt="Banner Image" className='image-banner'/>
             </div>
@@ -97,7 +101,7 @@ const MainContent = () => {
             </div>
         </div>
 
-        <div className="message">
+        <div className="message" data-aos="slide-up">
             <div className="image-director">
                 <img src={dirimage} alt="Image of director" style={{width:'100%', height:'100%', borderRadius:'50%'}}/  >
             </div>
