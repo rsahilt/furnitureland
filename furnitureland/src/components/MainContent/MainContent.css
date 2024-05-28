@@ -58,10 +58,15 @@ section{
 .banner{
     width: 100%;
     height: 500px;
-    margin-top: 60px;
+    /* margin-top: 60px; */
     display: flex;
     flex-direction: row;
-    background-color:#f8cdb4;
+    
+}
+
+.banner-bg,
+.summary{
+    background-color:#F2E1D9;
 }
 
 .banner-image{
@@ -111,7 +116,49 @@ section{
     border-color: black;
 }
 
+.insta-banner{
+    width: 40%;
+    height: 100%;
+    background-color: #fff;
+    padding-top: 40px;
+}
 
+.insta-icon{
+    padding-left: 50px;
+    font-size: 4em;
+    margin-top: 40px;    
+}
 
+.insta-post{
+    width: 25%;
+    height: 100%;
+}
 
+.summary{
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+}
 
+.summaryitem{
+    width: 25%;
+    height: 100%;
+    margin: 0 2%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.summary-icon{
+    font-size: 3.2em;
+    position: absolute;
+}
+
+.summary-text{
+    padding-top: 10px;
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #124f53;
+}

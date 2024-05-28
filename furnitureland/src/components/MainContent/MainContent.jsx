@@ -5,13 +5,25 @@ import prod1 from '../../assets/prod1.png';
 import prod2 from '../../assets/prod2.png';
 import prod3 from '../../assets/prod3.png';
 import bannerimage from '../../assets/banner.jpeg'
+import instabanner from '../../assets/instabanner.png'
+import insta1 from '../../assets/insta1.png'
+import insta2 from '../../assets/insta2.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { faTruck } from '@fortawesome/free-solid-svg-icons'
+import { faCreditCard } from '@fortawesome/free-solid-svg-icons'
+import { faBuilding } from '@fortawesome/free-solid-svg-icons'
+import { faHammer } from '@fortawesome/free-solid-svg-icons'
+
+
+
 
 const MainContent = () => {
+
   return (
     <section>
         <div className='heading-container'>
             <h1 className='sectionh1'>Best Seller</h1>
-
             <p className='heading-desc'>Uncover the undeniable allure of our top-selling furniture pieces, where timeless craftsmanship meets unparalleled comfort, creating an enduring appeal.</p>
         </div>
 
@@ -41,7 +53,7 @@ const MainContent = () => {
             </Card>
         </div>
 
-        <div className="banner">
+        <div className="banner banner-bg">
             <div className="banner-image">
                 <img src={bannerimage} alt="Banner Image" className='image-banner'/>
             </div>
@@ -60,6 +72,50 @@ const MainContent = () => {
                     <Button className="button-discover" variant="primary">Discover</Button>
                 </p>
 
+            </div>
+        </div>
+
+        <div className="banner">
+            <div className="insta-banner" style={{marginRight:'10%'}}>
+                <FontAwesomeIcon icon={faInstagram} className='insta-icon' />
+                <h1 className="bannertexth1" style={{paddingTop:'30px'}}>Check us out on instagram</h1>
+                <img src={instabanner} style={{width:'100%', padding: '10px 20px 0 40px'}} alt="" />
+            </div>
+            <div className="insta-post">
+                <img src={insta1} style={{width:'100%', height:'100%'}} alt="insta picture" />
+            </div>
+            <div className="insta-post">
+                <img src={insta2} style={{width:'100%', height:'100%'}} alt="insta picture" />
+            </div>
+        </div>
+
+        <div className="summary">
+            <div className="summaryitem">
+                <FontAwesomeIcon icon={faTruck} className='summary-icon'/>  
+                <br /><br /><br />
+                <p className='summary-text'>Free Delivery Inside Valley</p>
+                <p>We offer free delivery service inside the kathmandu valley</p>
+            </div>
+
+            <div className="summaryitem">
+                <FontAwesomeIcon icon={faCreditCard} className='summary-icon'/>  
+                <br /><br /><br />
+                <p className='summary-text'>Secure Payment</p>
+                <p>We accept secure online payment via bank transfers and mobile wallets</p>
+            </div>
+
+            <div className="summaryitem">
+                <FontAwesomeIcon icon={faBuilding} className='summary-icon'/>  
+                <br /><br /><br />
+                <p className='summary-text'>Multiple Locations</p>
+                <p>Visit is in every state of the country in 5 different locations</p>
+            </div>
+
+            <div className="summaryitem">
+                <FontAwesomeIcon icon={faHammer} className='summary-icon'/>  
+                <br /><br /><br />
+                <p className='summary-text'>Free Installation</p>
+                <p>We provide free installation service all over the nation</p>
             </div>
         </div>
     </section>
