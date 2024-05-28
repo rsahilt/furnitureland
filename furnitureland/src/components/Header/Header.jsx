@@ -44,7 +44,6 @@ const Header = () => {
                                 <Nav.Link as={Link} to="/products" className="nav-item">Products</Nav.Link>
                                 <Nav.Link as={Link} to="/about-us" className="nav-item">About Us</Nav.Link>
                                 <Nav.Link as={Link} to="/contact-us" className="nav-item">Contact Us</Nav.Link>
-                                <Nav.Link as={Link} to="/brand" className="nav-item">Brand</Nav.Link>
                             </Nav>
 
                             <Form inline>

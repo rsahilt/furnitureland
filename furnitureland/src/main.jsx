@@ -4,6 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import About from './pages/AboutPage.jsx'
 import Showroom from './pages/Showroom.jsx'
+import Contact from './pages/ContactPage.jsx'
 
 import {
   createBrowserRouter,
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/showroom",
     element: <Showroom />,
+  },
+  {
+    path: "/contact-us",
+    element: <Contact />,
   },
 ]);
 
