@@ -13,7 +13,9 @@ const Header = () => {
 
         <div className="nav">
             <div className="utility-bar">
-                Login | Register
+               <a href="#" className='signinstatus'>Login</a>
+               &nbsp;|&nbsp;
+               <a href="#" className='signinstatus'>Register</a>
             </div>
 
             <div className="menubar">

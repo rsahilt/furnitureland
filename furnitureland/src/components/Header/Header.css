@@ -35,6 +35,11 @@ header{
     padding-right: 20px;
 }
 
+.signinstatus{
+    text-decoration: none;
+    color: #000;
+}
+
 .menubar{
     height: 70px;
     width: 100%;
