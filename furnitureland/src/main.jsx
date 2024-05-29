@@ -5,6 +5,7 @@ import './index.css'
 import About from './pages/AboutPage.jsx'
 import Showroom from './pages/Showroom.jsx'
 import Contact from './pages/ContactPage.jsx'
+import Product from './pages/ProductPage.jsx'
 
 import {
   createBrowserRouter,
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
     path: "/contact-us",
     element: <Contact />,
   },
+  {
+    path: "/products",
+    element: <Product />,
+  },
+
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
