@@ -1,13 +1,11 @@
 .section-product{
     margin: 0 auto;
-    width: 80%;
-    height: 500px;
+    width: 100%;
 }
 
 .category-list{
     margin: 0 auto;
-    width: 70%;
-    height: 60px;
+    width: 55%;
     justify-content: center;
     align-items: center;
 }
@@ -22,4 +20,13 @@
     padding: 10px;
     letter-spacing: 1px;
     text-transform: uppercase;
+}
+
+.product-cards-container{
+    margin: 0 auto;
+    width: 95%;
+    padding: 20px 0;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
 }

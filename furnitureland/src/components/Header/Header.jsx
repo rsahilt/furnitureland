@@ -26,13 +26,13 @@ const Header = () => {
 
         <div className="nav">
             <div className="utility-bar">
-                <a href="#" className='signinstatus'>Login</a>
+                {/* <a href="#" className='signinstatus'>Login</a>
                 &nbsp;|&nbsp;
                 <a href="#" className='signinstatus'>Register</a>
                 &nbsp;&nbsp;
                 <a href="#" className='signinstatus'>
                     <FontAwesomeIcon icon={faCartShopping} />
-                </a>
+                </a> */}
             </div>
 
             <div className="menubar">
