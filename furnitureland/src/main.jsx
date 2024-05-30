@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
+import App from './App.jsx'
 import About from './pages/AboutPage.jsx'
 import Showroom from './pages/Showroom.jsx'
 import Contact from './pages/ContactPage.jsx'

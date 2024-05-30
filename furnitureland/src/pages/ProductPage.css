@@ -2,5 +2,25 @@
     margin: 0 auto;
     width: 80%;
     height: 500px;
+}
+
+.category-list{
+    margin: 0 auto;
+    width: 70%;
+    height: 60px;
     background-color: red;
+    justify-content: center;
+    align-items: center;
+}
+
+.category-list ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.category-list ul li{
+    list-style-type: none;
+    padding: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
