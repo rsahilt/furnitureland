@@ -36,7 +36,7 @@ const Product = () => {
   }, []);
 
   const handleCategoryClick = (category) => {
-    setSelectedCategory(category);
+    setSelectedCategory(category === 'All' ? null : category);
   };
 
   return (
@@ -45,7 +45,12 @@ const Product = () => {
       <section className='section-product'>
         <div className="category-list">
           <ul>
-            <li>All</li>
+            <li 
+              onClick={() => handleCategoryClick('All')}
+              className={selectedCategory === null ? 'selected-category' : ''}
+            >
+              All
+            </li>
             {categories.map(category => (
               <li 
                 key={category.id} 
@@ -60,7 +65,7 @@ const Product = () => {
 
         <div className="product-cards-container">
           {products
-            .filter(product => !selectedCategory || product.category_id === selectedCategory.id)
+            .filter(product => !selectedCategory || (selectedCategory === null || product.category_id === selectedCategory.id))
             .map(product => (
               <Card key={product.id} style={{ margin: '20px 10px', width: '20%', borderRadius: '0px', border: '1px solid #d1e2e3' }}>
                 <Card.Img style={{ borderRadius: '0px', height: '200px' }} variant="top" src={prod1} />
