@@ -13,9 +13,11 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 
 const Header = () => {
+    const location = useLocation();
   return (
     <header>
         <div className="logo">
@@ -39,11 +41,11 @@ const Header = () => {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
-                                <Nav.Link as={Link} to="/" className="nav-item">Home</Nav.Link>
-                                <Nav.Link as={Link} to="/showroom" className="nav-item">Showroom</Nav.Link>
-                                <Nav.Link as={Link} to="/products" className="nav-item">Products</Nav.Link>
-                                <Nav.Link as={Link} to="/about-us" className="nav-item">About Us</Nav.Link>
-                                <Nav.Link as={Link} to="/contact-us" className="nav-item">Contact Us</Nav.Link>
+                                <Nav.Link as={Link} to="/" className={`nav-item ${location.pathname === '/' ? 'active' : ''}`}>Home</Nav.Link>
+                                <Nav.Link as={Link} to="/showroom" className={`nav-item ${location.pathname === '/showroom' ? 'active' : ''}`}>Showroom</Nav.Link>
+                                <Nav.Link as={Link} to="/products" className={`nav-item ${location.pathname === '/products' ? 'active' : ''}`}>Products</Nav.Link>
+                                <Nav.Link as={Link} to="/about" className={`nav-item ${location.pathname === '/about' ? 'active' : ''}`}>About Us</Nav.Link>
+                                <Nav.Link as={Link} to="/contact" className={`nav-item ${location.pathname === '/contact' ? 'active' : ''}`}>Contact Us</Nav.Link>
                             </Nav>
 
                             <Form inline>

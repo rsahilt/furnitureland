@@ -19,7 +19,7 @@ app.get("/", (req,res)=>{
 })
 
 app.get("/products", (req,res)=>{
-    const sql = "SELECT * FROM category"
+    const sql = "SELECT * FROM categories"
     db.query(sql, (err,data)=>{
         if(err) return res.json(err)
         return res.json(data)

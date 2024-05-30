@@ -28,7 +28,7 @@ const Product = () => {
           
           <ul>
             {categories.map(category=>(
-              <li>{category.Name}</li>
+              <li>{category.name}</li>
             ))}
             
           </ul>

@@ -53,6 +53,10 @@ header{
     margin: 0 10px;
 }
 
+.nav-item.active {
+    color: red !important;
+    font-weight: 800;
+}
 
 .searchbuttonhome{
     border: none;
