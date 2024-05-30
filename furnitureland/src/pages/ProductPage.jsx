@@ -2,20 +2,35 @@ import './ProductPage.css'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 
 const Product = () => {
+  const [categories, setCategories] = useState([])
+
+  useEffect(()=>{
+    const fetchAllCategories = async ()=>{
+      try{
+        const res = await axios.get("http://localhost:8080/products")
+        setCategories(res.data)
+      }catch(err){
+        console.log(err)
+      }
+    }
+    fetchAllCategories()
+  },[])
+
   return (
     <>
       <Header />
       <section className='section-product'>
         <div className="category-list">
+          
           <ul>
-            <li>Living</li>
-            <li>Dining</li>
-            <li>Bedroom</li>
-            <li>Kitchen</li>
-            <li>Garden</li>
+            {categories.map(category=>(
+              <li>{category.Name}</li>
+            ))}
+            
           </ul>
         </div>
       </section>
