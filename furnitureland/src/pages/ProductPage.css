@@ -20,6 +20,11 @@
     padding: 10px;
     letter-spacing: 1px;
     text-transform: uppercase;
+    cursor: pointer;
+}
+
+.selected-category{
+    font-weight: 800 !important;
 }
 
 .product-cards-container{
@@ -29,4 +34,12 @@
     justify-content: space-between;
     display: flex;
     flex-wrap: wrap;
+}
+
+.prod-desc{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8em;
+
 }
