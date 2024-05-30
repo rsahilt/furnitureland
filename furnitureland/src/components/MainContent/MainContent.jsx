@@ -18,6 +18,7 @@ import { faHammer } from '@fortawesome/free-solid-svg-icons'
 import { useEffect } from 'react';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { Link } from 'react-router-dom';
 
 
 const MainContent = () => {
@@ -60,7 +61,9 @@ const MainContent = () => {
         </div>
 
         <p style={{display:'flex', justifyContent:'center', alignItems:'center'}}className='bannertextp'>
-            <Button className="button-discover" variant="primary">VIEW ALL PRODUCTS</Button>
+            <Link to="/products">
+                <Button className="button-discover" variant="primary">VIEW ALL PRODUCTS</Button>
+            </Link>
         </p>
   
         
