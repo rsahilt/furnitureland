@@ -73,7 +73,7 @@ const Product = () => {
           {products
             .filter(product => !selectedCategory || (selectedCategory === null || product.category_id === selectedCategory.id))
             .map(product => (
-              <Card key={product.id} data-aos="slide-up" style={{ margin: '20px 10px', width: '300px', borderRadius: '0px', border: '1px solid #d1e2e3' }}>
+              <Card key={product.id} data-aos="fade-in" style={{ margin: '20px 10px', width: '300px', borderRadius: '0px', border: '1px solid #d1e2e3' }}>
                 <Card.Img style={{ borderRadius: '0px', height: '300px' }} variant="top" src={prod1} />
                 <Card.Body>
                   <Card.Title className='prod-title'>{product.name}</Card.Title>

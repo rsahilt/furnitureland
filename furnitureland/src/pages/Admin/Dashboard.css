@@ -1,0 +1,14 @@
+.searchbuttonhome{
+    border: none;
+    padding-left: 2px;
+    color: white !important;
+    background-color: transparent;
+}
+
+.searchbuttonhome:hover,
+.searchbuttonhome:active,
+.searchbuttonhome:focus
+{
+    background-color: transparent !important;
+    color: white !important;
+}

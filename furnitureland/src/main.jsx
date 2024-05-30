@@ -6,6 +6,7 @@ import About from './pages/AboutPage.jsx'
 import Showroom from './pages/Showroom.jsx'
 import Contact from './pages/ContactPage.jsx'
 import Product from './pages/ProductPage.jsx'
+import Dashboard from './pages/Admin/Dashboard.jsx'
 
 import {
   createBrowserRouter,
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
   {
     path: "/products",
     element: <Product />,
+  },
+  {
+    path: "/admin",
+    element: <Dashboard />,
   },
 
 ]);
