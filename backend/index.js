@@ -18,8 +18,16 @@ app.get("/", (req,res)=>{
     res.json("hey this is the backend")
 })
 
-app.get("/products", (req,res)=>{
+app.get("/categories", (req,res)=>{
     const sql = "SELECT * FROM categories"
+    db.query(sql, (err,data)=>{
+        if(err) return res.json(err)
+        return res.json(data)
+    })
+})
+
+app.get("/brands", (req,res)=>{
+    const sql = "SELECT * FROM brands"
     db.query(sql, (err,data)=>{
         if(err) return res.json(err)
         return res.json(data)

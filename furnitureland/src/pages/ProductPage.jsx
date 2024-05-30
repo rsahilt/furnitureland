@@ -11,7 +11,7 @@ const Product = () => {
   useEffect(()=>{
     const fetchAllCategories = async ()=>{
       try{
-        const res = await axios.get("http://localhost:8080/products")
+        const res = await axios.get("http://localhost:8080/categories")
         setCategories(res.data)
       }catch(err){
         console.log(err)
