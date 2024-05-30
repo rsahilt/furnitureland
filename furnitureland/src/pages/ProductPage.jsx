@@ -5,11 +5,17 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Card from 'react-bootstrap/Card';
 import prod1 from "../assets/prod1.png"
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const Product = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
+
+  useEffect(()=>{
+    AOS.init({duration:1000});
+  },[])
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -67,7 +73,7 @@ const Product = () => {
           {products
             .filter(product => !selectedCategory || (selectedCategory === null || product.category_id === selectedCategory.id))
             .map(product => (
-              <Card key={product.id} style={{ margin: '20px 10px', width: '20%', borderRadius: '0px', border: '1px solid #d1e2e3' }}>
+              <Card key={product.id} data-aos="slide-up" style={{ margin: '20px 10px', width: '20%', borderRadius: '0px', border: '1px solid #d1e2e3' }}>
                 <Card.Img style={{ borderRadius: '0px', height: '200px' }} variant="top" src={prod1} />
                 <Card.Body>
                   <Card.Title className='prod-title'>{product.name}</Card.Title>
