@@ -27,13 +27,24 @@
     font-weight: 800 !important;
 }
 
-.product-cards-container{
+.product-cards-container
+{
     margin: 0 auto;
     width: 95%;
     padding: 20px 0;
     justify-content: space-between;
     display: flex;
     flex-wrap: wrap;
+}
+
+.category-dropdown{
+    margin: 0 auto;
+    width: 95%;
+    text-align: right;
+}
+
+.category-dropdown select{
+    padding: 10px 20px;
 }
 
 .prod-desc{

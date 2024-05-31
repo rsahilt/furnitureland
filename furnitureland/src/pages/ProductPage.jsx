@@ -11,7 +11,7 @@ import 'aos/dist/aos.css'
 const Product = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
   useEffect(()=>{
     AOS.init({duration:1000});
@@ -41,37 +41,29 @@ const Product = () => {
     fetchAllCategories()
   }, []);
 
-  const handleCategoryClick = (category) => {
-    setSelectedCategory(category === 'All' ? null : category);
+  const handleCategoryChange = (event) => {
+    const categoryId = event.target.value;
+    setSelectedCategory(categoryId === 'All' ? 'All' : categories.find(category => category.id === parseInt(categoryId)));
   };
 
   return (
     <>
       <Header />
       <section className='section-product'>
-        <div className="category-list">
-          <ul>
-            <li 
-              onClick={() => handleCategoryClick('All')}
-              className={selectedCategory === null ? 'selected-category' : ''}
-            >
-              All
-            </li>
+        <div className="category-dropdown">
+          <select onChange={handleCategoryChange} value={selectedCategory.id || 'All'}>
+            <option value="All">All Furnitures</option>
             {categories.map(category => (
-              <li 
-                key={category.id} 
-                onClick={() => handleCategoryClick(category)}
-                className={selectedCategory && selectedCategory.id === category.id ? 'selected-category' : ''}
-              >
+              <option key={category.id} value={category.id}>
                 {category.name}
-              </li>
+              </option>
             ))}
-          </ul>
+          </select>
         </div>
 
         <div className="product-cards-container">
           {products
-            .filter(product => !selectedCategory || (selectedCategory === null || product.category_id === selectedCategory.id))
+            .filter(product => selectedCategory === 'All' || product.category_id === selectedCategory.id)
             .map(product => (
               <Card key={product.id} data-aos="fade-in" style={{ margin: '20px 10px', width: '300px', borderRadius: '0px', border: '1px solid #d1e2e3' }}>
                 <Card.Img style={{ borderRadius: '0px', height: '300px' }} variant="top" src={prod1} />

@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom'
 const dashboard = () => {
   return (
         <div>
-            <Navbar expand="lg" style={{backgroundColor:'#3c3e56'}}>
+            <Navbar expand="lg" style={{backgroundColor:'#3c3e56'}} className='admin-nav'>
                 <Container fluid>
                     <Navbar.Brand href="#" style={{color:'#fff', paddingLeft:'20px'}}>Furniture Land</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
@@ -35,6 +35,7 @@ const dashboard = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
+
         </div>
   )
 }
