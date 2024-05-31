@@ -10,10 +10,10 @@ const about = () => {
       <Header />
 
       <section className="about-section">
-      <div className="board">
-          We are proud of being one of the largest furniture retailers and importers in Nepal. With four showrooms and two warehouses we have been supplying furniture to our customers to better suit their lifestyle since 2001. We import high quality furniture from Thailand, China, Vietnam, Malaysia and many other countries. We keep the largest stock of furniture so that we can supply large quantities when needed. We strongly believe that we are our customers ,so, we train our staffs to be the best in providing our customers with long term commitment, prompt delivery, professional advice and give the best customer satisfaction possible.
-      </div>
-        
+        <div className="board">
+            We are proud of being one of the largest furniture retailers and importers in Nepal. With four showrooms and two warehouses we have been supplying furniture to our customers to better suit their lifestyle since 2001. We import high quality furniture from Thailand, China, Vietnam, Malaysia and many other countries. We keep the largest stock of furniture so that we can supply large quantities when needed. We strongly believe that we are our customers ,so, we train our staffs to be the best in providing our customers with long term commitment, prompt delivery, professional advice and give the best customer satisfaction possible.
+        </div>
+
         <div className="aboutheading">
           <h1>Board Members</h1>
         </div>
