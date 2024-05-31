@@ -162,9 +162,9 @@ const Product = () => {
             <h6>Showing {sortedProducts.length} item(s) in <strong>{selectedFilterName}</strong></h6>
           </div>
 
-          <div style={{ fontSize: '0.9em', float: 'right' }}>
-            <select name="" id="" style={{ padding: '5px 15px' }} value={priceFilter} onChange={handlePriceFilterChange}>
-              <option value="defaultvalue">Filter by price</option>
+          <div style={{ fontSize: '0.9em', width:'98%', backgroundColor:'red'}}>
+            <select name="" id="" style={{ padding: '5px 15px', float:'right' }} value={priceFilter} onChange={handlePriceFilterChange}>
+              <option value="defaultvalue" disabled>Filter by price</option>
               <option value="lowtohigh">Price : Low to High</option>
               <option value="hightolow">Price : High to Low</option>
             </select>
@@ -172,12 +172,12 @@ const Product = () => {
 
           <div className="product-cards-container">
             {currentProducts.map(product => (
-              <Card key={product.id} data-aos="fade-in" style={{ margin: '10px 0', width: '300px', borderRadius: '0px', border: '1px solid #d1e2e3' }}>
-                <Card.Img style={{ borderRadius: '0px', height: '300px' }} variant="top" src={prod1} />
+              <Card key={product.id} data-aos="fade-in" style={{ margin: '10px 0 10px 0', width: '300px', borderRadius: '0px', border: '1px solid #d1e2e3' }}>
+                <Card.Img style={{ borderRadius: '0px', height: '300px', margin:'0' }} variant="top" src={prod1} />
                 <Card.Body>
-                  <Card.Title className='prod-title'>{product.name}</Card.Title>
-                  <Card.Text className='prod-desc'>Brand: {brands.find(brand => brand.id === product.brand_id)?.name}</Card.Text>
-                  <Card.Text className='prod-price'>${product.price}</Card.Text>
+                  <Card.Title className='prod-title' style={{margin:'0', padding:'0'}}>{product.name}</Card.Title>
+                  <Card.Text className='prod-desc' style={{margin:'0', padding:'0'}}>Brand: {brands.find(brand => brand.id === product.brand_id)?.name}</Card.Text>
+                  <Card.Text className='prod-price' style={{margin:'0', padding:'0'}}>${product.price}</Card.Text>
                 </Card.Body>
               </Card>
             ))}
