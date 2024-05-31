@@ -7,14 +7,14 @@ header{
 }
 
 .logo{
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     z-index: 2;
 }
 
 .image-logo{
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     background-color: rgb(129, 33, 33);
 }
 
