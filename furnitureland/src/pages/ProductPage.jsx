@@ -12,10 +12,24 @@ const Product = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [brands, setBrands] = useState([]);
+  const [selectedBrand, setSelectedBrand] = useState('All');
 
-  useEffect(()=>{
-    AOS.init({duration:1000});
-  },[])
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
+  useEffect(() => {
+    const fetchAllBrands = async () => {
+      try {
+        const res = await axios.get("http://localhost:8080/brands")
+        setBrands(res.data)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    fetchAllBrands()
+  }, []);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -43,27 +57,36 @@ const Product = () => {
 
   const handleCategoryClick = (categoryId) => {
     setSelectedCategory(categoryId === 'All' ? 'All' : categories.find(category => category.id === categoryId));
+    setSelectedBrand('All'); 
   };
 
-  const filteredProducts = products.filter(product => selectedCategory === 'All' || product.category_id === selectedCategory.id);
+  const handleBrandClick = (brandId) => {
+    setSelectedBrand(brandId === 'All' ? 'All' : brandId);
+    setSelectedCategory('All');
+  };
+
+  const filteredProducts = products.filter(product =>
+    (selectedCategory === 'All' || product.category_id === selectedCategory.id) &&
+    (selectedBrand === 'All' || product.brand_id === selectedBrand)
+  );
 
   return (
     <>
       <Header />
-      <section className='section-product' >
+      <section className='section-product'>
         <div className="product-sidebar">
           <div className="category-list">
             <ul>
               <li>Furnitures</li>
-              <li 
+              <li
                 onClick={() => handleCategoryClick('All')}
                 className={selectedCategory === 'All' ? 'selected-category' : ''}
               >
                 All Furnitures
               </li>
               {categories.map(category => (
-                <li 
-                  key={category.id} 
+                <li
+                  key={category.id}
                   onClick={() => handleCategoryClick(category.id)}
                   className={selectedCategory.id === category.id ? 'selected-category' : ''}
                 >
@@ -71,21 +94,39 @@ const Product = () => {
                 </li>
               ))}
             </ul>
+
+            <ul>
+              <li>Brands</li>
+              <li
+                onClick={() => handleBrandClick('All')}
+                className={selectedBrand === 'All' ? 'selected-brand' : ''}
+              >
+                All Brands
+              </li>
+              {brands.map(brand => (
+                <li
+                  key={brand.id}
+                  onClick={() => handleBrandClick(brand.id)}
+                  className={selectedBrand === brand.id ? 'selected-brand' : ''}
+                >
+                  {brand.name}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
         <div className="prod-main-content">
-
-        <div className="category-menu " style={{ margin: '0 auto', width: '95%', fontSize: '1.3em', padding: '10px' }}>
-          <div className='rectangle-triangle'>
-            Furnitures 
+          <div className="category-menu" style={{ margin: '0 auto', width: '95%', fontSize: '1.3em', padding: '10px' }}>
+            <div className='rectangle-triangle'>
+              Furnitures
+            </div>
+            &nbsp; &nbsp;
+            <div className='triangle-rectangle'>
+              {selectedCategory === 'All' ? 'All Furnitures' : selectedCategory.name}
+            </div>
           </div>
-          &nbsp; &nbsp;
-          <div className='triangle-rectangle'>
-            {selectedCategory === 'All' ? 'All Furnitures' : selectedCategory.name}
-          </div>
-        </div>
-          <div style={{margin:'0 auto', width:'95%', fontSize:'1.3em', padding:'10px'}}>
+          <div style={{ margin: '0 auto', width: '95%', fontSize: '1.3em', padding: '10px' }}>
             <h6>Showing {filteredProducts.length} item(s) in <strong>{selectedCategory === 'All' ? 'All Furnitures' : selectedCategory.name}</strong></h6>
           </div>
 

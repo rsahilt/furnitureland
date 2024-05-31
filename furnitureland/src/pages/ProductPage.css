@@ -35,7 +35,8 @@
 }
 
 
-.selected-category{
+.selected-category,
+.selected-brand{
     font-weight: 800 !important;
 }
 
