@@ -136,7 +136,7 @@ const MainContent = () => {
                 <FontAwesomeIcon icon={faBuilding} className='summary-icon'/>  
                 <br /><br /><br />
                 <p className='summary-text'>Multiple Locations</p>
-                <p>Visit is in every state of the country in 5 different locations</p>
+                <p>Visit us in every state of the country in 5 different locations</p>
             </div>
 
             <div className="summaryitem">

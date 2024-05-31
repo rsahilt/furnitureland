@@ -80,8 +80,34 @@
 }
 
 .category-menu{
-    background-color: red;
     display: flex;
+    background-color: #d00b1e;
 }
 
+.rectangle-triangle,
+.triangle-rectangle{
+    background-color: #fff;
+    color: #d00b1e;
+    padding: 0 10px;
+    margin: 0 5px;
+}
+
+
+.pagination{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #e5e5e5;
+}
+
+#paginationbutton{
+    outline: none;
+    border: 1px solid black;
+    padding: 10px 15px;
+    background-color:#cccccc;
+    margin-bottom: 20px;
+    margin: 10px 2px 20px 0;
+}
 

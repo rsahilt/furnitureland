@@ -14,6 +14,9 @@ const Product = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [brands, setBrands] = useState([]);
   const [selectedBrand, setSelectedBrand] = useState('All');
+  const [priceFilter, setPriceFilter] = useState('defaultvalue'); // New state for price filter
+  const [currentPage, setCurrentPage] = useState(1); // State for pagination
+  const productsPerPage = 9; // Number of products per page
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -56,19 +59,52 @@ const Product = () => {
   }, []);
 
   const handleCategoryClick = (categoryId) => {
-    setSelectedCategory(categoryId === 'All' ? 'All' : categories.find(category => category.id === categoryId));
-    setSelectedBrand('All'); 
+    setSelectedCategory(categoryId === 'All' ? 'All' : categoryId);
+    setSelectedBrand('All'); // reset selected brand
+    setCurrentPage(1); // reset to first page
   };
 
   const handleBrandClick = (brandId) => {
     setSelectedBrand(brandId === 'All' ? 'All' : brandId);
-    setSelectedCategory('All');
+    setSelectedCategory('All'); // reset selected category
+    setCurrentPage(1); // reset to first page
+  };
+
+  const handlePriceFilterChange = (e) => {
+    setPriceFilter(e.target.value);
+    setCurrentPage(1); // reset to first page
   };
 
   const filteredProducts = products.filter(product =>
-    (selectedCategory === 'All' || product.category_id === selectedCategory.id) &&
+    (selectedCategory === 'All' || product.category_id === selectedCategory) &&
     (selectedBrand === 'All' || product.brand_id === selectedBrand)
   );
+
+  const sortedProducts = filteredProducts.sort((a, b) => {
+    if (priceFilter === 'lowtohigh') {
+      return a.price - b.price;
+    } else if (priceFilter === 'hightolow') {
+      return b.price - a.price;
+    } else {
+      return 0;
+    }
+  });
+
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = sortedProducts.slice(indexOfFirstProduct, indexOfLastProduct);
+
+  const totalPages = Math.ceil(sortedProducts.length / productsPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const selectedFilterName = selectedCategory !== 'All'
+    ? categories.find(category => category.id === selectedCategory)?.name || 'All Furnitures'
+    : selectedBrand !== 'All'
+      ? brands.find(brand => brand.id === selectedBrand)?.name || 'All Brands'
+      : 'All Furnitures';
 
   return (
     <>
@@ -88,7 +124,7 @@ const Product = () => {
                 <li
                   key={category.id}
                   onClick={() => handleCategoryClick(category.id)}
-                  className={selectedCategory.id === category.id ? 'selected-category' : ''}
+                  className={selectedCategory === category.id ? 'selected-category' : ''}
                 >
                   {category.name}
                 </li>
@@ -117,29 +153,46 @@ const Product = () => {
         </div>
 
         <div className="prod-main-content">
-          <div className="category-menu" style={{ margin: '0 auto', width: '95%', fontSize: '1.3em', padding: '10px' }}>
-            <div className='rectangle-triangle'>
-              Furnitures
-            </div>
-            &nbsp; &nbsp;
-            <div className='triangle-rectangle'>
-              {selectedCategory === 'All' ? 'All Furnitures' : selectedCategory.name}
-            </div>
+
+          <div className="category-menu" style={{ margin: '0 auto', width: '100%', fontSize: '1.3em', padding: '10px' }}>
+            <div className='rectangle-triangle'>Furnitures</div>
+            <div className='triangle-rectangle'>{selectedFilterName}</div>
           </div>
           <div style={{ margin: '0 auto', width: '95%', fontSize: '1.3em', padding: '10px' }}>
-            <h6>Showing {filteredProducts.length} item(s) in <strong>{selectedCategory === 'All' ? 'All Furnitures' : selectedCategory.name}</strong></h6>
+            <h6>Showing {sortedProducts.length} item(s) in <strong>{selectedFilterName}</strong></h6>
+          </div>
+
+          <div style={{ fontSize: '0.9em', float: 'right' }}>
+            <select name="" id="" style={{ padding: '5px 15px' }} value={priceFilter} onChange={handlePriceFilterChange}>
+              <option value="defaultvalue">Filter by price</option>
+              <option value="lowtohigh">Price : Low to High</option>
+              <option value="hightolow">Price : High to Low</option>
+            </select>
           </div>
 
           <div className="product-cards-container">
-            {filteredProducts.map(product => (
-              <Card key={product.id} data-aos="fade-in" style={{ margin: '10px 10px', width: '300px', borderRadius: '0px', border: '1px solid #d1e2e3' }}>
+            {currentProducts.map(product => (
+              <Card key={product.id} data-aos="fade-in" style={{ margin: '10px 0', width: '300px', borderRadius: '0px', border: '1px solid #d1e2e3' }}>
                 <Card.Img style={{ borderRadius: '0px', height: '300px' }} variant="top" src={prod1} />
                 <Card.Body>
                   <Card.Title className='prod-title'>{product.name}</Card.Title>
-                  <Card.Text className='prod-desc'>Brand: {product.brand_id}</Card.Text>
+                  <Card.Text className='prod-desc'>Brand: {brands.find(brand => brand.id === product.brand_id)?.name}</Card.Text>
                   <Card.Text className='prod-price'>${product.price}</Card.Text>
                 </Card.Body>
               </Card>
+            ))}
+          </div>
+
+          <div className="pagination">
+            {Array.from({ length: totalPages }, (_, index) => (
+              <button
+              id="paginationbutton"
+                key={index}
+                onClick={() => handlePageChange(index + 1)}
+                className={ currentPage === index + 1 ? 'active' : ''}
+              >
+                {index + 1}
+              </button>
             ))}
           </div>
         </div>
