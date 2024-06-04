@@ -58,7 +58,8 @@ const Header = () => {
                                         />
                                     </Col>
                                     <Col xs="auto">
-                                        <Button className='searchbuttonhome' type="submit">
+                                        <Button className='searchbuttonhome-header' type="submit" 
+                                        style={{backgroundColor:'transparent', color:'black', border:'none'}}>
                                             <FontAwesomeIcon icon={faMagnifyingGlass} />
                                         </Button>
                                     </Col>

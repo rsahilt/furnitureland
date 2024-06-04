@@ -1,18 +1,23 @@
-.searchbuttonhome{
-    border: none;
-    padding-left: 2px;
-    color: white !important;
-    background-color: transparent;
+.admin-dashboard{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    padding-top: 0;
 }
 
-.searchbuttonhome:hover,
-.searchbuttonhome:active,
-.searchbuttonhome:focus
-{
-    background-color: transparent !important;
-    color: white !important;
+.sidebar-left{
+    width: 20%;
+    height: 100%;
 }
 
+.dashboard-content{
+    width: 80%;
+    height: 100%;
+}
 
+.admin-summary{
+    display: flex;
+    padding-left: 20px;
+}
 
 
