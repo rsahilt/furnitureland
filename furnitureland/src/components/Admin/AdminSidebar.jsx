@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCouch, faTachometer, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { Nav, Dropdown, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './Admin.css';
 
 function AdminSidebar() {
@@ -32,13 +33,13 @@ function AdminSidebar() {
         <Nav.Item>
           <Dropdown>
               <Dropdown.Toggle variant="link" style={{textDecoration:'none'}} id="dropdown-basic" className="admin-link text-black">
-                <FontAwesomeIcon icon={faUser} className="me-2 admin-faicon" /> Admin
+                <FontAwesomeIcon icon={faUser} className="me-2 admin-faicon" /> Users
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item href="#action/1">View All Admins</Dropdown.Item>
-                <Dropdown.Item href="#action/2">Add New Admin</Dropdown.Item>
-                <Dropdown.Item href="#action/3">Edit/Remove Admin</Dropdown.Item>
+                <Dropdown.Item href="#action/1">View All Users</Dropdown.Item>
+                <Dropdown.Item href="#action/2">Add New User</Dropdown.Item>
+                <Dropdown.Item href="#action/3">Edit/Remove User</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
         </Nav.Item>

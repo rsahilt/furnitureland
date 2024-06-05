@@ -7,6 +7,7 @@ import Showroom from './pages/Showroom.jsx'
 import Contact from './pages/ContactPage.jsx'
 import Product from './pages/ProductPage.jsx'
 import Dashboard from './pages/Admin/Dashboard.jsx'
+import AddUser from './pages/Admin/AddUser.jsx'
 
 import {
   createBrowserRouter,
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element: <Dashboard />,
+  },
+  {
+    path: "/admin/adduser",
+    element: <AddUser />,
   },
 
 ]);

@@ -27,7 +27,7 @@ const AdminNav = () => {
                             className="me-2"
                             aria-label="Search"
                             />
-                            <Button className='searchbuttonhome' type="submit">
+                            <Button className='searchbuttonhome-admin' style={{backgroundColor:'transparent', border:'none'}} type="submit">
                                 <FontAwesomeIcon icon={faMagnifyingGlass} />
                             </Button>
                         </Form>

@@ -1,6 +1,30 @@
 import mysql from 'mysql';
 import db from '../config/db.js';
 
+const createUsersTable = `
+    CREATE TABLE IF NOT EXISTS users (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        firstName VARCHAR(255) NOT NULL,
+        lastName VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL UNIQUE,
+        password VARCHAR(255) NOT NULL,
+        phoneNumber VARCHAR(15) NOT NULL,
+        city VARCHAR(255) NOT NULL,
+        address VARCHAR(255) NOT NULL,
+        province VARCHAR(255) NOT NULL,
+        country VARCHAR(255) NOT NULL DEFAULT 'Nepal',
+        gender ENUM('male', 'female', 'other') NOT NULL,
+        isAdmin BOOLEAN DEFAULT FALSE,
+        createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    )
+`;
+
+db.query(createUsersTable, (err, result) => {
+    if (err) throw err;
+    console.log("Users table created or already exists.");
+});
+
 // Create categories table
 const createCategoriesTable = `
     CREATE TABLE IF NOT EXISTS categories (

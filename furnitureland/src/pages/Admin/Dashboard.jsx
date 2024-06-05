@@ -3,7 +3,7 @@ import AdminNav from '../../components/Admin/AdminNav'
 import AdminSidebar from '../../components/Admin/AdminSidebar'
 import Card from 'react-bootstrap/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCouch, faEnvelope, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faCouch, faEnvelope, faUser, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 const dashboard = () => {
   return (
@@ -21,7 +21,7 @@ const dashboard = () => {
                     <div className="admin-summary">
                         <Card style={{ width: '18rem', marginRight:'25px' }}>
                             <Card.Body>
-                            <Card.Title>Admins</Card.Title>
+                            <Card.Title>Users</Card.Title>
                             <Card.Text>
                                 <FontAwesomeIcon icon={faUser} style={{fontSize: '2em'}}/>
                             </Card.Text>
@@ -42,6 +42,15 @@ const dashboard = () => {
                             <Card.Title>Feedbacks</Card.Title>
                             <Card.Text>
                                 <FontAwesomeIcon icon={faEnvelope} style={{fontSize: '2em'}}/>
+                            </Card.Text>
+                            </Card.Body>
+                        </Card>
+
+                        <Card style={{ width: '18rem', marginRight:'25px' }}>
+                            <Card.Body>
+                            <Card.Title>Orders</Card.Title>
+                            <Card.Text>
+                                <FontAwesomeIcon icon={faCartShopping} style={{fontSize: '2em'}}/>
                             </Card.Text>
                             </Card.Body>
                         </Card>

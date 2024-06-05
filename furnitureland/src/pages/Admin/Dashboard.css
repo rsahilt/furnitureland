@@ -1,18 +1,19 @@
 .admin-dashboard{
-    height: 100vh;
     display: flex;
     flex-direction: row;
-    padding-top: 0;
+    padding-top: 0;height: 120vh;
 }
 
 .sidebar-left{
     width: 20%;
     height: 100%;
+    background-color: #99bbc2;
 }
 
 .dashboard-content{
     width: 80%;
     height: 100%;
+    background-color: #fff;
 }
 
 .admin-summary{
