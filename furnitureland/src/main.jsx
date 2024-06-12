@@ -8,6 +8,7 @@ import Contact from './pages/ContactPage.jsx'
 import Product from './pages/ProductPage.jsx'
 import Dashboard from './pages/Admin/Dashboard.jsx'
 import AddUser from './pages/Admin/AddUser.jsx'
+import User from './pages/Admin/User.jsx'
 
 import {
   createBrowserRouter,
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
   {
     path: "/admin/adduser",
     element: <AddUser />,
+  },
+  {
+    path: "/admin/users",
+    element: <User />,
   },
 
 ]);

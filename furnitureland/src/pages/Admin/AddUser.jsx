@@ -16,7 +16,8 @@ const AddUser = () => {
       province: '',
       country: '',
       gender: '',
-      isAdmin: false // Add isAdmin field
+      isAdmin: false,// Add isAdmin field
+      profilepic: null
     });
   
     const [errors, setErrors] = useState({
@@ -33,9 +34,9 @@ const AddUser = () => {
     });
   
     const handleChange = (e) => {
-      const { name, value, type, checked } = e.target;
-      const newValue = type === 'checkbox' ? checked : value;
-  
+      const { name, value, type, checked, files } = e.target;
+      const newValue = type === 'checkbox' ? checked : type === 'file' ? files[0] : value;
+    
       setFormData({
         ...formData,
         [name]: newValue
@@ -142,8 +143,7 @@ const AddUser = () => {
 
         <div className="dashboard-content">
 
-          <Form onSubmit={handleSubmit} style={{width:'70%', margin:'0 auto'}} noValidate>
-            
+        <Form onSubmit={handleSubmit} style={{ width: '70%', margin: '0 auto' }} noValidate>
             
           <h1 style={{ fontWeight: '500', fontSize: '1.5em', padding: '40px 0 20px 0' }}>Add a new user</h1>
           <p style={{color:'red'}}><sup>*</sup>Only accepting clients whose address is in Nepal</p>
@@ -248,6 +248,15 @@ const AddUser = () => {
                 <Form.Group controlId="country">
                   <Form.Label>Country:</Form.Label>
                   <Form.Control type="text" name="country" value="Nepal" disabled onChange={handleChange} />
+                </Form.Group>
+              </Col>
+            </Row>
+
+            <Row>
+              <Col>
+                <Form.Group controlId="profilepic">
+                  <Form.Label>Display Picture:</Form.Label>
+                  <Form.Control type="file" name="profilepic" onChange={handleChange} />
                 </Form.Group>
               </Col>
             </Row>

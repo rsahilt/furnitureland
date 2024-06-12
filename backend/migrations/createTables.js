@@ -15,6 +15,7 @@ const createUsersTable = `
         country VARCHAR(255) NOT NULL DEFAULT 'Nepal',
         gender ENUM('male', 'female', 'other') NOT NULL,
         isAdmin BOOLEAN DEFAULT FALSE,
+        image VARCHAR(255),
         createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )
